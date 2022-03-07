@@ -55,25 +55,25 @@ Things The app will do
 
 ## WireFrames
 ### Evac App full sketch 
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/evac%20app.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/evac%20app.png)
 ### main screen
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Main%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Main%20Screen.png)
 ### about screen
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/About%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/About%20Screen.png)
 ### Create Evac Grab List Screen
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Create%20Evac%20Grab%20List%20%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Create%20Evac%20Grab%20List%20%20Screen.png)
 ### Document Backup Screen
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Document%20Backup%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Document%20Backup%20Screen.png)
 ### Group Message Screen
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Group%20Message%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Group%20Message%20Screen.png)
 ### How to Prep and Use App Screen
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/How%20to%20Prep%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/How%20to%20Prep%20Screen.png)
 ### Local Scanner Radio Screen
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Local%20Scanner%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Local%20Scanner%20Screen.png)
 ### Location Share Screen 
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Location%20Share%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Location%20Share%20Screen.png)
 ### Meeting Place Screen 
-[!alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Meeting%20Place%20Screen.png)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Meeting%20Place%20Screen.png)
 
 
 ### Capstone Project for General Assembly

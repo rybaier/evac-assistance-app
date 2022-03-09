@@ -81,7 +81,7 @@ use description for how to create a backup
 ### Meeting Place Screen 
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Meeting%20Place%20Screen.png)
 ### Navigation Layout
-![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/navigation-layout.drawio)
+![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/navigation-layout-screenshot.png)
 
 ## Technologies
 - React Native, Django, Aws for secure image upload

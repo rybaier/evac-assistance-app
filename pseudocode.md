@@ -1,0 +1,59 @@
+# Evact Project  Pseudo Code, plan and checklist title Evac-act
+## Backend Checklist
+- Build Backend With Express
+    -  Build Backend with Django (later on for more django experience)
+    - install deps bcrypt express jsonwebtoken mongoose nodemon dotenv heroku cors 
+    - create and code file structure 
+        - index.js
+        - directories
+            - db
+                - connection
+                - seed
+                - user seeds 4
+                - item seeds 4
+                - meeting place seeds 4
+            - middleware
+                - userAuth
+            - models
+                - User
+                - Evac Grab Item
+                - Meeting Place
+            - controllers
+                - User
+                    - post signup, post signin
+                - Evac Grab Item
+                    - get items, post items, edit items, delete items
+                - Meeting Place
+                    - get places, post places, edit places, delete places
+    - test backend 
+    - deploy backend on heroku
+        - create Procfile
+## Front End Checklist
+- Build FrontEnd with React Native
+    - install deps axios expo expo-location react-native-elements react-native-maps react-native-safe-area-context react-navigation 
+    - create  and code file structure
+        - src directories 
+            - api
+                - googlemaptraffic
+                - scannerradio
+                - evact 
+            - components
+                - map
+                - scanner player
+                - GrabItem Form
+                - meeting place form
+            - hooks
+                - tbd
+            - screens
+                - about 
+                - evac grab list
+                - evac grab item detail
+                - evac grab list create
+                - how to guide
+                - location share
+                - main
+                - scanner radio
+                - meeting places 
+                - message (stretch)
+                
+

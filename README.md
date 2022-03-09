@@ -1,6 +1,6 @@
-# Evac Assistance App - working title? Evaxapp or EvacPrapp or Evac Assist
+# Evac Assistance App - Evacced or Evact? working title? Evaxapp or EvacPrapp or Evac Assist
 ## What is this 
-An Evacuation Assistance App to help individuals, families and friends reduce the stress and have a plan when the need to evacuate their home arises.
+An Evacuation Assistance App to help individuals, families and friends reduce the stress and have a plan to follow when the need to evacuate their home arises.
 
 ## The Idea 
 Things The app will do
@@ -33,17 +33,22 @@ Things The app will do
 - March 7th
     - Submit Proposal For Approval
     - Have wireframes, and basic readme complete for proposal
-    - build initial framework for front end
+    - work on React native course
+- March 8th 
+     - build initial framework for front end
         - create all screens and boilerplates 
         - create all reusable components boilerplate
-        - create navbar using one of the 3 navigations( Drawer Naviagator may be best option)
-            - connect navbar to all screens
+      
     - decide technology for backend
-    - complete timeline and pseudocode 
-- March 8th
+   
+    - finish React Native tutorial
 - March 9th
+    - complete timeline and pseudocode   
+    - create navbar using one of the 3 navigations( Drawer Naviagator may be best option)
+        - connect navbar to all screens
 - March 10th
 - March 11th
+    - Reach MVP     
 - March 12th
 - March 13th
 - March 14th
@@ -62,7 +67,8 @@ Things The app will do
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/About%20Screen.png)
 ### Create Evac Grab List Screen
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Create%20Evac%20Grab%20List%20%20Screen.png)
-### Document Backup Screen
+### Document Backup Screen (scrapped until more time to ensure )
+use description for how to create a backup 
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Document%20Backup%20Screen.png)
 ### Group Message Screen
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Group%20Message%20Screen.png)
@@ -74,8 +80,11 @@ Things The app will do
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Location%20Share%20Screen.png)
 ### Meeting Place Screen 
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/Meeting%20Place%20Screen.png)
+### Navigation Layout
+![alt text]()
 
-
+## Technologies
+- React Native, Django, Aws for secure image upload
 ### Capstone Project for General Assembly
 ### Technical Requirements
 project must:
@@ -86,3 +95,4 @@ project must:
     - app store for me 
 - Use something we didn't teach in class
     - React Native
+

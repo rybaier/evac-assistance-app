@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Provider as AuthorizationProvider} from './src/context/AuthContext'
+import { navigationRef } from './RootNavigation'
 
 //==============
 // Screens
@@ -32,7 +33,7 @@ const Drawer = createDrawerNavigator()
 
 const LoggedIn = () => {
   return(
-      <Drawer.Navigator>
+      <Drawer.Navigator >
         <Drawer.Screen name='Home' component={MainScreen} />
         <Drawer.Screen name='EvacGrabList' component={EvacGrabListScreen} />
         <Drawer.Screen name='HowToGuide' component={HowToGuideScreen} />
@@ -64,7 +65,7 @@ function App(){
 export default () => {
   return(
     <AuthorizationProvider>
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
           <App />    
       </NavigationContainer>
     </AuthorizationProvider>

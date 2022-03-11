@@ -35,21 +35,20 @@ Things The app will do
     - Have wireframes, and basic readme complete for proposal
     - work on React native course
 - March 8th 
-     - build initial framework for front end
+    - build initial framework for front end
         - create all screens and boilerplates 
         - create all reusable components boilerplate
-      
     - decide technology for backend django or express?
         - Express first because I am more familiar it
         - build a django version to challenge myself after capstone is turned in for personal project
-   
     - finish React Native tutorial
 - March 9th
     - Build Express backend
     - complete timeline and pseudocode   
+   
+- March 10th 
     - create navbar using one of the 3 navigations( Drawer Naviagator may be best option)
         - connect navbar to all screens
-- March 10th
 - March 11th
     - Reach MVP     
 - March 12th

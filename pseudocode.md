@@ -8,9 +8,7 @@
         - directories
             - db
                 - connection
-                - seed
-                - user seeds 4
-                - item seeds 4
+                - item seeds 
                 - meeting place seeds 4
             - middleware
                 - userAuth

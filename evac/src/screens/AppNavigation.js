@@ -19,8 +19,6 @@ import MessageScreen from "./src/screens/MessageScreen";
 import ScannerRadioScreen from "./src/screens/ScannerRadioScreen";
 import SigninScreen from "./src/screens/SigninScreen";
 import SignupScreen from "./src/screens/SignupScreen";
-import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
-import WelcomeLoginCredCheckScreen from './src/screens/WelcomeLoginCredCheckScreen';
 
 // need to have to navigation flows
     // login flow, has access to signup signin and aboutApp
@@ -46,28 +44,17 @@ const LoggedIn = () => {
 }
 
 
-
-function App(){
+const  AppScreens = () =>{
   return(
+    <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="CredCheck" component={WelcomeLoginCredCheckScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="About" component={AboutScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Signup' component={SignupScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Signin' component={SigninScreen} options={{headerShown: false}}/> 
-        <Stack.Screen name='LoggedIn' component={LoggedIn} options={{headerShown: false}}/>
-        <Stack.Screen name='ResetPassword' component={ResetPasswordScreen} options={{headerShown: false}}/>
+        <Stack.Screen name='Signup' component={SignupScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name='Signin' component={SigninScreen} /> 
+        <Stack.Screen name='LoggedIn' component={LoggedIn} />
       </Stack.Navigator>
-   
+    </NavigationContainer>
   )
 }
 
-export default () => {
-  return(
-    <AuthorizationProvider>
-      <NavigationContainer>
-          <App />    
-      </NavigationContainer>
-    </AuthorizationProvider>
-  )
-
-}
+export default AppScreens

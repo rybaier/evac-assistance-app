@@ -1,11 +1,12 @@
 import React from 'react'
 import {Text, View, StyleSheet } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const MainScreen = () => {
     return (
-        <View>
+        <SafeAreaView>
             <Text style={{fontSize: 48}}> Main Screen</Text>
-        </View>
+        </SafeAreaView>
     )
 }
 

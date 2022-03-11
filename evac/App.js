@@ -5,13 +5,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Provider as AuthorizationProvider} from './src/context/AuthContext'
+import { Provider as GrabItemProvider} from './src/context/GrabItemContext';
+import { Provider as MeetingPlaceProvider } from './src/context/MeetingPlaceContext';
 import { navigationRef } from './RootNavigation'
 
 //==============
 // Screens
 //==============
 import AboutScreen from "./src/screens/AboutScreen";
-import EvacGrabListScreen from "./src/screens/EvacGrabListScreen";
+import EvacGrabItemScreen from "./src/screens/EvacGrabItemScreen";
 import HowToGuideScreen from "./src/screens/HowToGuideScreen";
 import LocationShareScreen from "./src/screens/LocationShareScreen";
 import MainScreen from "./src/screens/MainScreen";
@@ -35,13 +37,13 @@ const LoggedIn = () => {
   return(
       <Drawer.Navigator >
         <Drawer.Screen name='Home' component={MainScreen} />
-        <Drawer.Screen name='EvacGrabList' component={EvacGrabListScreen} />
-        <Drawer.Screen name='HowToGuide' component={HowToGuideScreen} />
-        <Drawer.Screen name='LocationShare' component={LocationShareScreen} />
+        <Drawer.Screen name='EvacGrabItem' component={EvacGrabItemScreen} />
+       {/* <Drawer.Screen name='LocationShare' component={LocationShareScreen} /> */}
         <Drawer.Screen name='MeetingPlaces' component={MeetingPlacesScreen} />
-        <Drawer.Screen name='Messages' component={MessageScreen} />
-        <Drawer.Screen name='ScannerRadio' component={ScannerRadioScreen} />
+        {/* <Drawer.Screen name='Messages' component={MessageScreen} /> */}
+        {/* <Drawer.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
         <Drawer.Screen name="About" component={AboutScreen} />
+        <Drawer.Screen name='HowToGuide' component={HowToGuideScreen} />
       </Drawer.Navigator>
   )
 }
@@ -64,11 +66,15 @@ function App(){
 
 export default () => {
   return(
+    <MeetingPlaceProvider>
+    <GrabItemProvider>
     <AuthorizationProvider>
       <NavigationContainer ref={navigationRef}>
           <App />    
       </NavigationContainer>
     </AuthorizationProvider>
+    </GrabItemProvider>
+    </MeetingPlaceProvider>
   )
 
 }

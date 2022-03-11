@@ -86,7 +86,7 @@ use description for how to create a backup
 ![alt text](https://github.com/rybaier/evac-assistance-app/blob/main/wireframes/navigation-layout-screenshot.png)
 
 ## Technologies
-- React Native, Django, Aws for secure image upload
+- React Native, Express, MERN Stack, html, css, JS
 ### Capstone Project for General Assembly
 ### Technical Requirements
 project must:

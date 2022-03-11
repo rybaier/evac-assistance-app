@@ -6,6 +6,8 @@ const MainScreen = () => {
     return (
         <SafeAreaView>
             <Text style={{fontSize: 48}}> Main Screen</Text>
+            <Text> Evac Grab Flatlist here</Text>
+            <Text> Meeting Place Flatlist here</Text>
         </SafeAreaView>
     )
 }

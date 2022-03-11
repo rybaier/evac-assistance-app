@@ -6,6 +6,8 @@ const MessageScreen = () => {
     return (
         <SafeAreaView>
             <Text style={{fontSize: 48}}> Message Screen</Text>
+
+
         </SafeAreaView>
     )
 }

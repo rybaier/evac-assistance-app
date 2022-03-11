@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import {Text, View, StyleSheet, Button } from 'react-native'
 import { Context as AuthorizationContext } from '../context/AuthContext'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const WelcomeLoginCredCheckScreen = ({ navigation }) => {
+    const { stillLoggedIn } = useContext(AuthorizationContext)
 
+    useEffect(()=>{
+        stillLoggedIn()
+    }, [])
     //use interval function to create a blinking cred check message 
     return (
         <SafeAreaView>

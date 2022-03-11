@@ -10,10 +10,10 @@ const ResetPasswordScreen = ({ navigation }) => {
     return (
         <SafeAreaView>
          <LoginForm 
-         formTitle={'Welcome to Evac-act Sign In to continue'}
-         errorMessage={'add context here'} 
+         formTitle={'Reset Your Password'}
+         errorMessage={state.errorMessage} 
          onSubmit={({ email, password })=> signin({ email, password }) } 
-         buttonText= {'Sign In' }
+         buttonText= {'Reset Password' }
          />
         </SafeAreaView>
     )

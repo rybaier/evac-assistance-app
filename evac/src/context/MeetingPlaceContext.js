@@ -23,7 +23,8 @@ const getPlaces = dispatch => async () => {
 
 const createPlaces = dispatch => async ( name, compassD, address) => {
     console.log('create')
-    await evacAPI.post('/meetingplaces', {  name, compassD, address } )
+    // await evacAPI.post('/meetingplaces', {  name, compassD, address } )
+    navigate('Home')
 }
 
 const deletePlaces = dispatch => async (id) => {
@@ -35,6 +36,7 @@ const editPlaces = dispatch => async (id, name, compassD, address) => {
     console.log('edit')
     await evacAPI.put(`/meetingplaces${id}`, { name, compassD, address })
     dispatch ({type: 'edit_place', payload: {id, name, compassD, address}})
+    navigate('Home')
 }
 
 export const { Provider, Context} = createDataContext(MeetingPlaceReducer, 

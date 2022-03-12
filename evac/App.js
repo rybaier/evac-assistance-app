@@ -35,7 +35,7 @@ const Drawer = createDrawerNavigator()
 
 const LoggedIn = () => {
   return(
-      <Drawer.Navigator >
+      <Drawer.Navigator  >
         <Drawer.Screen name='Home' component={MainScreen} />
         <Drawer.Screen name='EvacGrabItem' component={EvacGrabItemScreen} />
         <Drawer.Screen name='LocationShare' component={LocationShareScreen} />

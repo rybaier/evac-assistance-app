@@ -49,10 +49,14 @@ Things The app will do
 - March 10th 
     - create navbar using one of the 3 navigations( Drawer Naviagator may be best option)
         - connect navbar to all screens
-- March 11th
-    - Reach MVP     
+- March 11th 
+    - fix errors
+    - build forms 
+    -  make context crud functions for items and places 
 - March 12th
+
 - March 13th
+     - Reach MVP  
 - March 14th
 - March 15th
     - Stretch Goal and styling 

@@ -38,7 +38,7 @@ const LoggedIn = () => {
       <Drawer.Navigator >
         <Drawer.Screen name='Home' component={MainScreen} />
         <Drawer.Screen name='EvacGrabItem' component={EvacGrabItemScreen} />
-       {/* <Drawer.Screen name='LocationShare' component={LocationShareScreen} /> */}
+        <Drawer.Screen name='LocationShare' component={LocationShareScreen} />
         <Drawer.Screen name='MeetingPlaces' component={MeetingPlacesScreen} />
         {/* <Drawer.Screen name='Messages' component={MessageScreen} /> */}
         {/* <Drawer.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}

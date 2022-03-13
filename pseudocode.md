@@ -55,3 +55,10 @@
                 - message (stretch)
                 
 
+
+
+## How to Guide Layout
+- First Steps 
+    - understand that this app is here to help you in the unfortunate moments when you are forced to evacuate your home. This guide will help you take some pre emptive steps and prepare you for just such an event. That way when the need to evacuate arises, the thoughts about what you want to save and where you will go, will be taken care of. All you will have to do is refer to the lists you make here and execute the plan!
+    - First please take a moment to think about what you truly value in your home. To do this you must first ask yourself what are the items  you have, that if permanently lost would devesate you. The things you can not live with out These are your priority number 1 items. At most You will have 10. Write these down. xs  
+    - After that 

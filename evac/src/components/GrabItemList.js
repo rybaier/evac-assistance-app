@@ -11,18 +11,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 const GrabItemList = ({ navigation }) => {
     const { state, deleteItems, getItems } = useContext(ItemContext)
 
-    useEffect(() => {
-        getItems() 
-        const listener = navigation.addListener('didFocus', () => {
-            getItems()
-        })
-        return () => {
-            listener.remove()
-        }
-    }, [])
     return (
-        <FlatList data = { this.state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
-            return(
+        
                 <TouchableOpacity onPress={() => style= styles.checked}>
                     <View style={ styles.row }>
                         <Text> { item.name }</Text>
@@ -36,9 +26,9 @@ const GrabItemList = ({ navigation }) => {
                     </View>
                 </TouchableOpacity>
             )
-        }}/>
-    )
+       
 }
+
 
 const styles = StyleSheet.create({
     row: {

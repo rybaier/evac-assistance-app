@@ -1,40 +1,43 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Context as ItemContext } from '../../context/GrabItemContext'
 import { FontAwesome } from '@expo/vector-icons'
 import { Ionicons } from '@expo/vector-icons'; 
 import { NavigationEvents } from 'react-navigation'
+import evacAPI from '../../api/evacAPI'
 
 import * as RootNavigation from '../../../RootNavigation'
+import axios from 'axios'
+
 
 const EvacGrabItemScreen = ({ navigation }) => {
     const { state, deleteItems, getItems } = useContext(ItemContext)
-  console.log(state)
-  const navigate = RootNavigation
-  console.log (RootNavigation)
-
-  console.log(navigation)
+  // console.log(state)
+  const [loading, SetLoading] = useState(false)
+  const [ data, setData ] = useState(null)
+  
+ const getData = async () => {
+   try {
+     await evacAPI.get('/items').then((res)=> console.log(res.json))
+   } catch (err) {
+     
+   }
+ }
   useEffect(() => {
-        getItems() 
-        const eventListener =  navigation.addListener('didFocus', () => {
-          getItems()
-      })
-
-      return () => {
-          eventListener.removeListener()
-      }
-      
+      SetLoading(true)
+      getData()
+      SetLoading(false)
+      setData(state)
+      console.log(data, '1')
     }, [])
-    
+ 
     return (
       <View>
-       
-    {state.length > 0 ?
-     <FlatList style= {{flex:1}} data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
-          console.log(item, '1')
-            return(
-                <TouchableOpacity onPress={() => console.log('here')}>
+    {loading === false && state.length > 0 ?
+     <FlatList  data = { data } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
+                   return(
+                    <TouchableOpacity onPress={() => console.log('here')}>
                     <View style={ styles.row }>
                         <Text style= {styles.text}> { item.priority }</Text>
                         <Text style= {styles.text}> { item.name }</Text>
@@ -48,7 +51,7 @@ const EvacGrabItemScreen = ({ navigation }) => {
                     </View>
                 </TouchableOpacity>
             )
-        }}/> : <Text> Loading Items...</Text>}
+        }}/> : <Text> Add Items...For list access</Text>}
     </View>   
     )
 }
@@ -59,8 +62,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingVertical: 20,
         paddingHorizontal: 10,
-        borderTopWidth: 1,
-        borderColor: 'grey'
+        borderWidth: 1,
+        borderColor: 'grey',
+        
     },
     icon: {
         fontSize: 16
@@ -70,7 +74,8 @@ const styles = StyleSheet.create({
         textDecorationStyle: 'solid'
     },
     text:{
-      fontSize: 18
+      fontSize: 18,
+      color: 'red'
     }
 })
 

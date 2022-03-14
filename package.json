@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "deps": "^1.0.0",
+    "peer": "^0.6.1",
+    "react-navigation": "^4.4.4"
+  }
+}

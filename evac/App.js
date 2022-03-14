@@ -59,6 +59,13 @@ function App(){
         <Stack.Screen name='Signin' component={SigninScreen} options={{headerShown: false}}/> 
         <Stack.Screen name='LoggedIn' component={LoggedIn} options={{headerShown: false}}/>
         <Stack.Screen name='ResetPassword' component={ResetPasswordScreen} options={{headerShown: false}}/>
+        <Stack.Screen name='Home' component={MainScreen} />
+        <Stack.Screen name='EvacGrabItem' component={EvacGrabItemScreen} />
+        <Stack.Screen name='LocationShare' component={LocationShareScreen} />
+        <Stack.Screen name='MeetingPlaces' component={MeetingPlacesScreen} />
+        {/* <Stack.Screen name='Messages' component={MessageScreen} /> */}
+        {/* <Stack.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
+        <Stack.Screen name='HowToGuide' component={HowToGuideScreen} />
       </Stack.Navigator>
    
   )

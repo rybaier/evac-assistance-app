@@ -14,7 +14,6 @@ const MainScreen = ( { navigation }) => {
             <Button title={'sign out'} onPress={signout} />
             <Text style={{fontSize: 48}}> Main Screen</Text>
             <Text> Evac Grab Flatlist here</Text>
-            <GrabItemList />
             <Text> Meeting Place Flatlist here</Text>
         </>
     )

@@ -23,6 +23,7 @@ const ItemReducer = (state, action) => {
 const getItems = dispatch => async () => {
     console.log('get')
     const response = await evacAPI.get('/items')
+    console.log(response.data)
     dispatch({type: 'get_items ', payload: response.data })
 }
 

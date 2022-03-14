@@ -13,10 +13,15 @@ const GrabItemList = ({ navigation }) => {
 
     useEffect(() => {
         getItems() 
-     
+        const listener = navigation.addListener('didFocus', () => {
+            getItems()
+        })
+        return () => {
+            listener.remove()
+        }
     }, [])
     return (
-        <FlatList data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
+        <FlatList data = { this.state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
             return(
                 <TouchableOpacity onPress={() => style= styles.checked}>
                     <View style={ styles.row }>

@@ -28,7 +28,7 @@ import ResetPasswordScreen from './src/screens/Login/ResetPasswordScreen';
 import WelcomeLoginCredCheckScreen from './src/screens/Login/WelcomeLoginCredCheckScreen';
 import CreateGrabItemScreen from './src/screens/GrabItems/CreateGrabItemScreen';
 import GrabItemDetailScreen from './src/screens/GrabItems/GrabItemDetailScreen';
-
+import CreateMeetingPlacesScreen from './src/screens/MeetingPlaces/CreateMeetingPlacesScreen';
 // need to have to navigation flows
     // login flow, has access to signup signin and aboutApp
     // main flow has access to everything else
@@ -50,7 +50,14 @@ const LoggedIn = () => {
         title: 'My Evac Item List'
         } }/>
         <Drawer.Screen name='LocationShare' component={ LocationShareScreen } />
-        <Drawer.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
+        <Drawer.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } options={
+          {headerRight: () => (
+          <TouchableOpacity onPress={() => navigate('CreatePlace')}>
+            <Feather name="plus" size={30} />
+          </TouchableOpacity>
+        ),
+        title: 'My Meeting Place List'
+        } }/>
         {/* <Drawer.Screen name='Messages' component={MessageScreen} /> */}
         {/* <Drawer.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
         <Drawer.Screen name="About" component={ AboutScreen } />
@@ -79,7 +86,8 @@ function App(){
         {/* <Stack.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
         <Stack.Screen name='HowToGuide' component={ HowToGuideScreen } />   
         <Stack.Screen name='CreateItem' component={ CreateGrabItemScreen } />
-        <Stack.Screen name = 'ItemDetail' component={ GrabItemDetailScreen } />
+        <Stack.Screen name='ItemDetail' component={ GrabItemDetailScreen } />
+        <Stack.Screen name= 'CreatePlace' component={ CreateMeetingPlacesScreen } />
       </Stack.Navigator>
    
   )

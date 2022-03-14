@@ -1,27 +1,62 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MeetingPlaceForm from "../../components/MeetingPlaceForm";
 import { Context as MeetingPlaceContext } from "../../context/MeetingPlaceContext";
 
 const MeetingPlacesScreen = ({ navigation }) => {
-//   console.log(navigation);
-  const { state, createPlaces } = useContext(MeetingPlaceContext);
+  const { state, deletePlaces, getPlaces } = useContext(MeetingPlaceContext)
+  // console.log(state)
+  const [loading, setLoading] = useState(false)
+  
+  useEffect(() => {
+      setLoading(true)
+      getItems()
+      setLoading(false)
+    }, [])
+ 
+    return (
+      <View>
+          {loading === false && state.length > 0 ?
+          <FlatList  data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
+                        return(
+                          <View style={ styles.row }>
+                              <Text style= {styles.text}> { item.priority }</Text>
+                              <Text style= {styles.text}> { item.name }</Text>
+                              <TouchableOpacity onPress={ () => navigation.navigate('ItemDetail', { id: item._id}) }>
+                                  <Ionicons name= 'information-circle-outline' style={ styles.icon } />
+                              </TouchableOpacity>
+                              <TouchableOpacity onPress={ ()=> deleteItems(item._id) }>
+                                  <FontAwesome name= 'trash-o' style={ styles.icon } />
+                              </TouchableOpacity>
+                          </View>
+                    
+                  )
+              }}/> : <Text style={ styles.text }> Add Items...For list access</Text>}
+    </View>   
+    )
+}
 
-  return (
-    <SafeAreaView>
-      <MeetingPlaceForm
-        formTitle={"Set a Meeting Place"}
-        errorMessage={null}
-        onSubmit={( name, compass_direction, address ) =>
-          createPlaces( name, compass_direction, address )
-        }
-        buttonText={"Save Meeting Place"}
-      />
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({});
-
+const styles = StyleSheet.create({
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingVertical: 20,
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'grey',
+        
+    },
+    icon: {
+        fontSize: 16
+    },
+    checked:{
+        textDecorationLine: 'line-through', 
+        textDecorationStyle: 'solid'
+    },
+    text:{
+      fontSize: 25,
+      color: 'red'
+    }
+})
 export default MeetingPlacesScreen;

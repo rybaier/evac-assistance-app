@@ -30,7 +30,7 @@ const getItems = dispatch => async () => {
 const createItems = dispatch => async ( {priority, name, location, instructions} ) => {
     console.log('create', {priority, name, location, instructions} )
     await evacAPI.post('/items',  {priority, name, location, instructions}  )
-    navigate('Home')
+    navigate('EvacGrabItem')
 }
 
 const deleteItems = dispatch => async (id) => {

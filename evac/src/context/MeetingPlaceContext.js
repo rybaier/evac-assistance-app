@@ -28,7 +28,7 @@ const getPlaces = dispatch => async () => {
 const createPlaces = dispatch => async ({ name, compass_direction, address}) => {
     console.log( name, compass_direction, address )
     await evacAPI.post('/meetingplaces', { name, compass_direction, address } )
-    navigate('Home')
+    navigate('CreatePlace')
 }
 
 const deletePlaces = dispatch => async (id) => {

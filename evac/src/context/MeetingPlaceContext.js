@@ -10,6 +10,10 @@ const MeetingPlaceReducer = (state, action) => {
     switch (action.type){
         case 'get_places':
             return action.payload
+        case 'edit_place':
+            return state.map((place) => {
+                return place.id === action.payload.id ? action.payload : place
+            })
         default:
             return state
     }
@@ -24,7 +28,7 @@ const getPlaces = dispatch => async () => {
 const createPlaces = dispatch => async ({ name, compass_direction, address}) => {
     console.log( name, compass_direction, address )
     await evacAPI.post('/meetingplaces', { name, compass_direction, address } )
-    // navigate('Home')
+    navigate('Home')
 }
 
 const deletePlaces = dispatch => async (id) => {

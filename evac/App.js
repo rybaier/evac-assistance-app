@@ -13,17 +13,17 @@ import { navigationRef } from './RootNavigation'
 // Screens
 //==============
 import AboutScreen from "./src/screens/AboutScreen";
-import EvacGrabItemScreen from "./src/screens/EvacGrabItemScreen";
+import EvacGrabItemScreen from "./src/screens/GrabItems/EvacGrabItemScreen";
 import HowToGuideScreen from "./src/screens/HowToGuideScreen";
 import LocationShareScreen from "./src/screens/LocationShareScreen";
 import MainScreen from "./src/screens/MainScreen";
-import MeetingPlacesScreen from "./src/screens/MeetingPlacesScreen";
+import MeetingPlacesScreen from "./src/screens/MeetingPlaces/MeetingPlacesScreen";
 import MessageScreen from "./src/screens/MessageScreen";
 import ScannerRadioScreen from "./src/screens/ScannerRadioScreen";
-import SigninScreen from "./src/screens/SigninScreen";
-import SignupScreen from "./src/screens/SignupScreen";
-import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
-import WelcomeLoginCredCheckScreen from './src/screens/WelcomeLoginCredCheckScreen';
+import SigninScreen from "./src/screens/Login/SigninScreen";
+import SignupScreen from "./src/screens/Login/SignupScreen";
+import ResetPasswordScreen from './src/screens/Login/ResetPasswordScreen';
+import WelcomeLoginCredCheckScreen from './src/screens/Login/WelcomeLoginCredCheckScreen';
 
 // need to have to navigation flows
     // login flow, has access to signup signin and aboutApp

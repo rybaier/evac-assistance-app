@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import {Text, View, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import MeetingPlaceForm from '../components/MeetingPlaceForm'
-import { Context as MeetingPlaceContext } from '../context/MeetingPlaceContext'
+import MeetingPlaceForm from '../../components/MeetingPlaceForm'
+import { Context as MeetingPlaceContext } from '../../context/MeetingPlaceContext'
 
 const EditMeetPlaceScreen = ({ navigation }) => {
     // console.log(navigation)

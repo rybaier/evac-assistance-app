@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import {Text, View, StyleSheet, Button } from 'react-native'
-import {Context as AuthorizationContext} from '../context/AuthContext'
-import LoginForm from '../components/LogInForm'
+import {Context as AuthorizationContext} from '../../context/AuthContext'
+import LoginForm from '../../components/LogInForm'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const SignupScreen = ({ navigation }) => {

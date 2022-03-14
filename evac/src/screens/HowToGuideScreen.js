@@ -6,6 +6,8 @@ const HowToGuideScreen = () => {
     return (
         <SafeAreaView>
             <Text style={{fontSize: 48}}> HowToGuide Screen</Text>
+ 
+
         </SafeAreaView>
     )
 }

@@ -20,8 +20,10 @@ const getItems = dispatch => async () => {
     console.log('get')
 }
 
-const createItems = dispatch => async () => {
-    console.log('create')
+const createItems = dispatch => async ( {priority, name, location, instructions} ) => {
+    console.log('create', {priority, name, location, instructions} )
+    await evacAPI.post('/items',  {priority, name, location, instructions}  )
+
 }
 
 const deleteItems = dispatch => async () => {

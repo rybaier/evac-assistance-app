@@ -5,7 +5,8 @@ import BasicStyledSpace from '../components/BasicStyleSpace'
 const AboutScreen = ({ navigation }) => {
     return (
         <View>
-          
+             <Button onPress={() => navigation.navigate('Signin')} title= 'Sign In Flow Delete' />
+
             <Button onPress={() => navigation.navigate('LoggedIn')} title= 'Logged In Flow Delete' />
             <Text style={ styles.about }>Welcome to Evac-act this app is designed to help ease some of the 
                 stress that is involved when the call to evacuate your home is made. </Text>

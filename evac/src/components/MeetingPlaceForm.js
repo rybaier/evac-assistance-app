@@ -5,7 +5,7 @@ import BasicStyledSpace from "./BasicStyleSpace";
 
 const MeetingPlaceForm = ({ formTitle, errorMessage, onSubmit, buttonText }) => {
 const [name, setName] =useState('')
-const [compassD, setCompassD] = useState('')
+const [compass_direction, setCompass_Direction] = useState('')
 const [address, setAddress] = useState('')
 
   return (
@@ -24,8 +24,8 @@ const [address, setAddress] = useState('')
          <Input
         label="Compass Direction"
         placeholder="North South East or West"
-        value={ compassD }
-        onChangeText={ setCompassD }
+        value={ compass_direction }
+        onChangeText={ setCompass_Direction }
         autoCapitalize="none"
         autoCorrect={false}
       />
@@ -43,7 +43,7 @@ const [address, setAddress] = useState('')
           <Text style={styles.error}> { errorMessage }</Text>
         ) : null }
           <Button title={ buttonText } onPress={() => 
-            onSubmit({ name, compassD, address })} />
+            onSubmit({ name, compass_direction, address })} />
       </BasicStyledSpace>
     </View>
   );

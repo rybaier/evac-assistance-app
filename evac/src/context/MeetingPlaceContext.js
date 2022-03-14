@@ -21,10 +21,10 @@ const getPlaces = dispatch => async () => {
     dispatch({type: 'get_places', payload: response.data })
 }
 
-const createPlaces = dispatch => async ( name, compassD, address) => {
-    console.log('create')
-    await evacAPI.post('/meetingplaces', {  name, compassD, address } )
-    navigate('Home')
+const createPlaces = dispatch => async ({ name, compass_direction, address}) => {
+    console.log( name, compass_direction, address )
+    await evacAPI.post('/meetingplaces', { name, compass_direction, address } )
+    // navigate('Home')
 }
 
 const deletePlaces = dispatch => async (id) => {
@@ -33,12 +33,12 @@ const deletePlaces = dispatch => async (id) => {
  navigate('Home')
 }
 
-const editPlaces = dispatch => async (id, name, compassD, address) => {
+const editPlaces = dispatch => async (id, name, compass_direction, address) => {
     console.log('edit')
-    await evacAPI.put(`/meetingplaces${id}`, { name, compassD, address })
-    dispatch ({type: 'edit_place', payload: {id, name, compassD, address}})
+    await evacAPI.put(`/meetingplaces/${id}`, { name, compass_direction, address })
+    dispatch ({type: 'edit_place', payload: {id, name, compass_direction, address}})
     navigate('Home')
 }
 
 export const { Provider, Context} = createDataContext(MeetingPlaceReducer, 
-    { getPlaces, createPlaces, deletePlaces, editPlaces}, {isSignedIn : true})
+    { getPlaces, createPlaces, deletePlaces, editPlaces}, {})

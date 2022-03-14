@@ -5,12 +5,12 @@ import MeetingPlaceForm from '../components/MeetingPlaceForm'
 import { Context as MeetingPlaceContext } from '../context/MeetingPlaceContext'
 
 const EditMeetPlaceScreen = ({ navigation }) => {
-    console.log(navigation)
-    const { state, createPlaces } = useContext(MeetingPlaceContext)
+    // console.log(navigation)
+    const { state, editPlaces } = useContext(MeetingPlaceContext)
     return (
         <SafeAreaView>
             <MeetingPlaceForm formTitle={'Set a Meeting Place'} errorMessage={null} 
-            onSubmit={({name, compassD, address })=> createPlaces({name, compassD, address })} buttonText={'Save Meeting Place'}/>
+            onSubmit={({name, compassD, address })=> editPlaces({name, compassD, address })} buttonText={'Save Meeting Place'}/>
          </SafeAreaView>
     )
 }

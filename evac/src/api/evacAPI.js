@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //restart ngrok and change url each day until backend is deployed
 const instance =axios.create({
-    baseURL: 'http://d6f6-98-97-38-83.ngrok.io/'
+    baseURL: 'http://22be-98-97-38-83.ngrok.io/'
 })
 
 instance.interceptors.request.use(
@@ -12,7 +12,7 @@ instance.interceptors.request.use(
         if (token) {
             config.headers.Authorization = `Bearer ${token}`
         }
-        return config
+        return config 
     },
     (err) => {
         return Promise.reject(err)

@@ -12,8 +12,8 @@ const EvacGrabItemScreen = () => {
       <ItemForm
         formTitle={"Add Item to Grab List"}
         errorMessage={null}
-        onSubmit={({ priority, name, location, instructions }) =>
-          createItems({ priority, name, location, instructions })
+        onSubmit={( priority, name, location, instructions ) =>
+          createItems( priority, name, location, instructions )
         }
         buttonText={'Save Grab Item'}
       />

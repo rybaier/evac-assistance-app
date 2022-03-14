@@ -17,7 +17,6 @@ const LocationShareScreen = () => {
         }}
         provider={PROVIDER_GOOGLE}
       >
-       
       </MapView>
     
   );

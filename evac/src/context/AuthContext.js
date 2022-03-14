@@ -29,7 +29,7 @@ const stillLoggedIn = dispatch => async () => {
         dispatch ({type:'signin', payload: token })
         navigate('LoggedIn')
     } else{
-        navigate('Signup')
+        navigate('CredCheck')
     }
 }
 const clearErrorMessage = (dispatch) => () => {

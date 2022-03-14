@@ -29,6 +29,7 @@ import WelcomeLoginCredCheckScreen from './src/screens/Login/WelcomeLoginCredChe
 import CreateGrabItemScreen from './src/screens/GrabItems/CreateGrabItemScreen';
 import GrabItemDetailScreen from './src/screens/GrabItems/GrabItemDetailScreen';
 import CreateMeetingPlacesScreen from './src/screens/MeetingPlaces/CreateMeetingPlacesScreen';
+import MeetingPlaceDetailScreen from './src/screens/MeetingPlaces/MeetingPlaceDetailScreen';
 // need to have to navigation flows
     // login flow, has access to signup signin and aboutApp
     // main flow has access to everything else
@@ -88,6 +89,7 @@ function App(){
         <Stack.Screen name='CreateItem' component={ CreateGrabItemScreen } />
         <Stack.Screen name='ItemDetail' component={ GrabItemDetailScreen } />
         <Stack.Screen name= 'CreatePlace' component={ CreateMeetingPlacesScreen } />
+        <Stack.Screen name= 'PlaceDetail' component={ MeetingPlaceDetailScreen } />
       </Stack.Navigator>
    
   )

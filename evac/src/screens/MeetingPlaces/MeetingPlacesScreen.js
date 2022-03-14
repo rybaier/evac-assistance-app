@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, { useContext, useState, useEffect } from "react";
+import { Text, View, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MeetingPlaceForm from "../../components/MeetingPlaceForm";
 import { Context as MeetingPlaceContext } from "../../context/MeetingPlaceContext";
-
+import { Ionicons, FontAwesome } from '@expo/vector-icons'
 const MeetingPlacesScreen = ({ navigation }) => {
   const { state, deletePlaces, getPlaces } = useContext(MeetingPlaceContext)
   // console.log(state)
@@ -11,7 +11,7 @@ const MeetingPlacesScreen = ({ navigation }) => {
   
   useEffect(() => {
       setLoading(true)
-      getItems()
+      getPlaces()
       setLoading(false)
     }, [])
  
@@ -23,16 +23,16 @@ const MeetingPlacesScreen = ({ navigation }) => {
                           <View style={ styles.row }>
                               <Text style= {styles.text}> { item.priority }</Text>
                               <Text style= {styles.text}> { item.name }</Text>
-                              <TouchableOpacity onPress={ () => navigation.navigate('ItemDetail', { id: item._id}) }>
+                              <TouchableOpacity onPress={ () => navigation.navigate('PlaceDetail', { id: item._id}) }>
                                   <Ionicons name= 'information-circle-outline' style={ styles.icon } />
                               </TouchableOpacity>
-                              <TouchableOpacity onPress={ ()=> deleteItems(item._id) }>
+                              <TouchableOpacity onPress={ ()=> deletePlaces(item._id) }>
                                   <FontAwesome name= 'trash-o' style={ styles.icon } />
                               </TouchableOpacity>
                           </View>
                     
                   )
-              }}/> : <Text style={ styles.text }> Add Items...For list access</Text>}
+              }}/> : <Text style={ styles.text }> Add Places...For list access</Text>}
     </View>   
     )
 }

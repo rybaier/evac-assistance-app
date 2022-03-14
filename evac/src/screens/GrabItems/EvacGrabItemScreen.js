@@ -26,7 +26,7 @@ const EvacGrabItemScreen = ({ navigation }) => {
  }
   useEffect(() => {
       SetLoading(true)
-      getData()
+      getItems()
       SetLoading(false)
       setData(state)
       console.log(data, '1')

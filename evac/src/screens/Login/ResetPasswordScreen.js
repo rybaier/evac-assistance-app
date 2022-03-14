@@ -12,7 +12,7 @@ const ResetPasswordScreen = ({ navigation }) => {
          <LoginForm 
          formTitle={'Reset Your Password'}
          errorMessage={state.errorMessage} 
-         onSubmit={({ email, password })=> signin({ email, password }) } 
+         onSubmit={({ email, password })=> resetPassword({ email, password }) } 
          buttonText= {'Reset Password' }
          />
         </SafeAreaView>

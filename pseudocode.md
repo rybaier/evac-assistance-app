@@ -60,5 +60,10 @@
 ## How to Guide Layout
 - First Steps 
     - understand that this app is here to help you in the unfortunate moments when you are forced to evacuate your home. This guide will help you take some pre emptive steps and prepare you for just such an event. That way when the need to evacuate arises, the thoughts about what you want to save and where you will go, will be taken care of. All you will have to do is refer to the lists you make here and execute the plan!
-    - First please take a moment to think about what you truly value in your home. To do this you must first ask yourself what are the items  you have, that if permanently lost would devesate you. The things you can not live with out These are your priority number 1 items. At most You will have 10. This is what you will grab if you only have 5 minutes to evacuate. Write these down.   
-    - Now, 
+    - First Step please take a moment to think about what you truly value in your home. To do this you must first ask yourself what are the items  you have, that if permanently lost would devesate you. The things you can not live with out These are your priority number 1 items. At most You will have 10. This is what you will grab if you only have 5 minutes to evacuate. Write these down.
+    - Second Step find the important documents you have, that will be important to have copies of in event the originals are destroyed.
+        - These should include indentification (such as Id or Passport), insurance cards, deeds to the house etc. 
+        - Take a photo of each of these documents and save them to a flash drive or save the copies somewhere secure! Add this Document Backup to your Grab Item List and Give it a priority of 1. 
+    - Almost There! 
+    - Third Step Decide on 4 places that you can go in the event of an evacuation. One For each North South East and West. 
+        - add each Step

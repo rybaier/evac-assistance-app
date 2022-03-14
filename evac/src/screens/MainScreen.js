@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import {Text, View, StyleSheet } from 'react-native'
 import { Button } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import GrabItemList from '../components/GrabItemList'
 import { Context as AuthorizationContext } from '../context/AuthContext'
 
 const MainScreen = ( { navigation }) => {

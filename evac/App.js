@@ -7,7 +7,9 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Provider as AuthorizationProvider} from './src/context/AuthContext'
 import { Provider as GrabItemProvider} from './src/context/GrabItemContext';
 import { Provider as MeetingPlaceProvider } from './src/context/MeetingPlaceContext';
-import { navigationRef } from './RootNavigation'
+import { navigationRef, navigate } from './RootNavigation'
+import { Feather } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 //==============
 // Screens
@@ -24,6 +26,8 @@ import SigninScreen from "./src/screens/Login/SigninScreen";
 import SignupScreen from "./src/screens/Login/SignupScreen";
 import ResetPasswordScreen from './src/screens/Login/ResetPasswordScreen';
 import WelcomeLoginCredCheckScreen from './src/screens/Login/WelcomeLoginCredCheckScreen';
+import CreateGrabItemScreen from './src/screens/GrabItems/CreateGrabItemScreen';
+import GrabItemDetailScreen from './src/screens/GrabItems/GrabItemDetailScreen';
 
 // need to have to navigation flows
     // login flow, has access to signup signin and aboutApp
@@ -36,14 +40,22 @@ const Drawer = createDrawerNavigator()
 const LoggedIn = () => {
   return(
       <Drawer.Navigator  >
-        <Drawer.Screen name='Home' component={MainScreen} />
-        <Drawer.Screen name='EvacGrabItem' component={EvacGrabItemScreen} />
-        <Drawer.Screen name='LocationShare' component={LocationShareScreen} />
-        <Drawer.Screen name='MeetingPlaces' component={MeetingPlacesScreen} />
+        <Drawer.Screen name='Home' component={ MainScreen } />
+        <Drawer.Screen name='EvacGrabItem' component={ EvacGrabItemScreen } options={
+          {headerRight: () => (
+          <TouchableOpacity onPress={() => navigate('CreateItem')}>
+            <Feather name="plus" size={30} />
+          </TouchableOpacity>
+        ),
+        title: 'My Evac Item List'
+        } }/>
+        <Drawer.Screen name='LocationShare' component={ LocationShareScreen } />
+        <Drawer.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
         {/* <Drawer.Screen name='Messages' component={MessageScreen} /> */}
         {/* <Drawer.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
-        <Drawer.Screen name="About" component={AboutScreen} />
-        <Drawer.Screen name='HowToGuide' component={HowToGuideScreen} />
+        <Drawer.Screen name="About" component={ AboutScreen } />
+        <Drawer.Screen name='HowToGuide' component={ HowToGuideScreen } />
+     
       </Drawer.Navigator>
   )
 }
@@ -53,19 +65,21 @@ const LoggedIn = () => {
 function App(){
   return(
       <Stack.Navigator>
-        <Stack.Screen name="CredCheck" component={WelcomeLoginCredCheckScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="About" component={AboutScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Signup' component={SignupScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Signin' component={SigninScreen} options={{headerShown: false}}/> 
-        <Stack.Screen name='LoggedIn' component={LoggedIn} options={{headerShown: false}}/>
-        <Stack.Screen name='ResetPassword' component={ResetPasswordScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Home' component={MainScreen} />
-        <Stack.Screen name='EvacGrabItem' component={EvacGrabItemScreen} />
-        <Stack.Screen name='LocationShare' component={LocationShareScreen} />
-        <Stack.Screen name='MeetingPlaces' component={MeetingPlacesScreen} />
+        <Stack.Screen name="CredCheck" component={ WelcomeLoginCredCheckScreen } options={{headerShown: false}}/>
+        <Stack.Screen name="About" component={ AboutScreen } options={{headerShown: false}}/>
+        <Stack.Screen name='Signup' component={ SignupScreen } options={{headerShown: false}}/>
+        <Stack.Screen name='Signin' component={ SigninScreen } options={{headerShown: false}}/> 
+        <Stack.Screen name='LoggedIn' component={ LoggedIn } options={{headerShown: false}}/>
+        <Stack.Screen name='ResetPassword' component={ ResetPasswordScreen } options={{headerShown: false}}/>
+        <Stack.Screen name='Home' component={ MainScreen } />
+        <Stack.Screen name='EvacGrabItem' component={ EvacGrabItemScreen } />
+        <Stack.Screen name='LocationShare' component={ LocationShareScreen } />
+        <Stack.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
         {/* <Stack.Screen name='Messages' component={MessageScreen} /> */}
         {/* <Stack.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
-        <Stack.Screen name='HowToGuide' component={HowToGuideScreen} />
+        <Stack.Screen name='HowToGuide' component={ HowToGuideScreen } />   
+        <Stack.Screen name='CreateItem' component={ CreateGrabItemScreen } />
+        <Stack.Screen name = 'ItemDetail' component={ GrabItemDetailScreen } />
       </Stack.Navigator>
    
   )

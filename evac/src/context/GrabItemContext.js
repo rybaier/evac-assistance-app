@@ -33,7 +33,7 @@ const createItems = dispatch => async ( {priority, name, location, instructions}
     navigate('Home')
 }
 
-const deleteItems = dispatch => async () => {
+const deleteItems = dispatch => async (id) => {
  console.log('delete')
  await evacAPI.delete(`/items/${id}`)
  navigate('Home')

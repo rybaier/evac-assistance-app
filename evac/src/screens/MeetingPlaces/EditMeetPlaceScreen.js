@@ -9,7 +9,7 @@ const EditMeetPlaceScreen = ({ navigation }) => {
     const { state, editPlaces } = useContext(MeetingPlaceContext)
     return (
         <SafeAreaView>
-            <MeetingPlaceForm formTitle={'Set a Meeting Place'} errorMessage={null} 
+            <MeetingPlaceForm formTitle={'Edit a Meeting Place'} errorMessage={null} 
             onSubmit={({name, compassD, address })=> editPlaces({name, compassD, address })} buttonText={'Save Meeting Place'}/>
          </SafeAreaView>
     )

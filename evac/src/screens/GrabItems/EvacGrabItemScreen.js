@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
+import {Text, View, StyleSheet, FlatList, TouchableOpacity, Pressable } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Context as ItemContext } from '../../context/GrabItemContext'
 import { FontAwesome } from '@expo/vector-icons'
@@ -10,7 +10,11 @@ const EvacGrabItemScreen = ({ navigation }) => {
     const { state, deleteItems, getItems } = useContext(ItemContext)
   // console.log(state)
   const [loading, setLoading] = useState(false)
+  const [checked, setChecked] = useState(null)
   
+
+  
+    
   useEffect(() => {
       setLoading(true)
       getItems()
@@ -22,18 +26,20 @@ const EvacGrabItemScreen = ({ navigation }) => {
           {loading === false && state.length > 0 ?
           <FlatList  data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
                         return(
-                            <TouchableOpacity onPress={() => styles.checked}>
-                                <View style={ styles.row }>
+                            
+                                <Pressable style ={[styles.row, {backgroundColor: checked === item._id ? 'yellow' : null }]}
+                                 onPress = {() => setChecked(item._id)} 
+                                onLongPress = {() => setChecked(null)}>
                                     <Text style= {styles.text}> { item.priority }</Text>
                                     <Text style= {styles.text}> { item.name }</Text>
+                                   
                                     <TouchableOpacity onPress={ () => navigation.navigate('ItemDetail', { id: item._id}) }>
                                         <Ionicons name= 'information-circle-outline' style={ styles.icon } />
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={ ()=> deleteItems(item._id) }>
                                         <FontAwesome name= 'trash-o' style={ styles.icon } />
                                     </TouchableOpacity>
-                                </View>
-                             </TouchableOpacity>
+                              </Pressable>
                     
                   )
               }}/> : <Text style={ styles.text }> Add Items...For list access</Text>}
@@ -49,17 +55,21 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         borderWidth: 1,
         borderColor: 'grey',
+        flexWrap:'wrap',
         
     },
     icon: {
-        fontSize: 16
+        fontSize: 30
+    },
+    unchecked:{
+       
     },
     checked:{
-        textDecorationLine: 'line-through', 
-        textDecorationStyle: 'solid'
+        backgroundColor: 'yellow'
+
     },
     text:{
-      fontSize: 25,
+      fontSize: 18,
       color: 'red'
     }
 })

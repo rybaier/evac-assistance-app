@@ -43,7 +43,7 @@ const editItems = dispatch => async ({ id, priority, name, location, instruction
     console.log('edit')
     await evacAPI.put(`/meetingplaces/${id}`, { priority, name, location, instructions } )
     dispatch ({type: 'edit_items', payload: {id, priority, name, location, instructions } })
-    navigate('Home')
+    navigate('EvacGrabItem')
 }
 
 

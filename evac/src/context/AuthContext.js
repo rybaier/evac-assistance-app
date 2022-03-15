@@ -29,7 +29,7 @@ const stillLoggedIn = dispatch => async () => {
         dispatch ({type:'signin', payload: token })
         navigate('LoggedIn')
     } else{
-        navigate('CredCheck')
+        navigate('About')
     }
 }
 const clearErrorMessage = (dispatch) => () => {
@@ -64,11 +64,19 @@ const signin = (dispatch)  => async ({ email, password }) => {
 const signout = (dispatch) => async () => {
     await AsyncStorage.removeItem('token')
     dispatch({type: 'signout' })
-    navigate('CredCheck')
+    navigate('About')
         //sign out
     }
-const resetPassword = (dispatch) => async () => {
-    
+const resetPassword = (dispatch)  => async ({ email, password }) => {
+    try {
+        const response = await evacAPI.put('/signin', {email, password})
+        await AsyncStorage.setItem('token', response.data.token)
+        dispatch({ type: 'signin', payload: response.data.token})
+        navigate('LoggedIn')
+    } catch (err) {
+        console.log(err)
+        dispatch({type:'add_error', payload: 'invalid email'})
+    }
 }
 export const { Provider, Context } = createDataContext(AuthorizationReducer, 
     {signin, signout, stillLoggedIn, signup, clearErrorMessage, resetPassword}, {isSignedIn: false})

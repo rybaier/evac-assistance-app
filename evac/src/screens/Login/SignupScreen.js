@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {Text, View, StyleSheet, Button } from 'react-native'
+import {Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import {Context as AuthorizationContext} from '../../context/AuthContext'
 import LoginForm from '../../components/LogInForm'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -15,12 +15,19 @@ const SignupScreen = ({ navigation }) => {
             onSubmit={({ email, password })=> signup({ email, password }) } 
             buttonText= {'Sign Up' }
             />
+        <TouchableOpacity onPress={()=> navigation.navigate('Signin')}>
+         <Text style={ styles.text } > Already Have An Account? Click here for Sign Up</Text>
+         </TouchableOpacity>
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
-
+    text: {
+        fontSize: 18,
+        color: '#0000ff',
+        marginTop: 15
+    }
 })
 
 export default SignupScreen

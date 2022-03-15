@@ -6,7 +6,7 @@ import { Context as AuthorizationContext } from '../../context/AuthContext'
 //form variables
 //formTitle, errorMessage, onSubmit, buttonText 
 const ResetPasswordScreen = ({ navigation }) => {
-    const { state, signin, resetPassword } = useContext(AuthorizationContext)
+    const { state, resetPassword } = useContext(AuthorizationContext)
     return (
         <SafeAreaView>
          <LoginForm 

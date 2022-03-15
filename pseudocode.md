@@ -66,4 +66,10 @@
         - Take a photo of each of these documents and save them to a flash drive or save the copies somewhere secure! Add this Document Backup to your Grab Item List and Give it a priority of 1. 
     - Almost There! 
     - Third Step Decide on 4 places that you can go in the event of an evacuation. One For each North South East and West. 
-        - add each Step
+        - add each Place to the Meeting Places section.
+    - Fourth from here you can start to think about items that are priority 2 and below. Helpful Tips, add no more than 10 to each level of priority. Think about adding things like clothes, food, and sleeping gear.
+        Once these steps have been completed, you are at least a little bit more prepared and hopefully you never need it. If you do remember you've made the list and plan, just execute quickly and stay safe!
+
+
+    Remember You will not be able to take everything. Prioritze what matters most, and take only those. 
+

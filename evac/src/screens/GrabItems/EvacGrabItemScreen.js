@@ -22,16 +22,18 @@ const EvacGrabItemScreen = ({ navigation }) => {
           {loading === false && state.length > 0 ?
           <FlatList  data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
                         return(
-                          <View style={ styles.row }>
-                              <Text style= {styles.text}> { item.priority }</Text>
-                              <Text style= {styles.text}> { item.name }</Text>
-                              <TouchableOpacity onPress={ () => navigation.navigate('ItemDetail', { id: item._id}) }>
-                                  <Ionicons name= 'information-circle-outline' style={ styles.icon } />
-                              </TouchableOpacity>
-                              <TouchableOpacity onPress={ ()=> deleteItems(item._id) }>
-                                  <FontAwesome name= 'trash-o' style={ styles.icon } />
-                              </TouchableOpacity>
-                          </View>
+                            <TouchableOpacity onPress={() => styles.checked}>
+                                <View style={ styles.row }>
+                                    <Text style= {styles.text}> { item.priority }</Text>
+                                    <Text style= {styles.text}> { item.name }</Text>
+                                    <TouchableOpacity onPress={ () => navigation.navigate('ItemDetail', { id: item._id}) }>
+                                        <Ionicons name= 'information-circle-outline' style={ styles.icon } />
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={ ()=> deleteItems(item._id) }>
+                                        <FontAwesome name= 'trash-o' style={ styles.icon } />
+                                    </TouchableOpacity>
+                                </View>
+                             </TouchableOpacity>
                     
                   )
               }}/> : <Text style={ styles.text }> Add Items...For list access</Text>}

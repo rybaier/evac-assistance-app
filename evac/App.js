@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { getPathFromState, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -8,7 +8,7 @@ import { Provider as AuthorizationProvider} from './src/context/AuthContext'
 import { Provider as GrabItemProvider} from './src/context/GrabItemContext';
 import { Provider as MeetingPlaceProvider } from './src/context/MeetingPlaceContext';
 import { navigationRef, navigate } from './RootNavigation'
-import { Feather } from '@expo/vector-icons'
+import { Feather, FontAwesome } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 //==============
@@ -30,6 +30,8 @@ import CreateGrabItemScreen from './src/screens/GrabItems/CreateGrabItemScreen';
 import GrabItemDetailScreen from './src/screens/GrabItems/GrabItemDetailScreen';
 import CreateMeetingPlacesScreen from './src/screens/MeetingPlaces/CreateMeetingPlacesScreen';
 import MeetingPlaceDetailScreen from './src/screens/MeetingPlaces/MeetingPlaceDetailScreen';
+import EditGrabItemScreen from './src/screens/GrabItems/EditGrabItemScreen';
+import EditMeetPlaceScreen from './src/screens/MeetingPlaces/EditMeetPlaceScreen';
 // need to have to navigation flows
     // login flow, has access to signup signin and aboutApp
     // main flow has access to everything else
@@ -62,7 +64,7 @@ const LoggedIn = () => {
         {/* <Drawer.Screen name='Messages' component={MessageScreen} /> */}
         {/* <Drawer.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
         <Drawer.Screen name="About" component={ AboutScreen } />
-        <Drawer.Screen name='HowToGuide' component={ HowToGuideScreen } />
+        <Drawer.Screen name='HowToGuide' component={ HowToGuideScreen } options={{ title: 'Walkthrough' }}/>
      
       </Drawer.Navigator>
   )
@@ -85,11 +87,27 @@ function App(){
         <Stack.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
         {/* <Stack.Screen name='Messages' component={MessageScreen} /> */}
         {/* <Stack.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
-        <Stack.Screen name='HowToGuide' component={ HowToGuideScreen } />   
+        <Stack.Screen name='HowToGuide' component={ HowToGuideScreen } options={{ title: 'Walkthrough' }} />   
         <Stack.Screen name='CreateItem' component={ CreateGrabItemScreen } />
-        <Stack.Screen name='ItemDetail' component={ GrabItemDetailScreen } />
+        <Stack.Screen name='ItemDetail' component={ GrabItemDetailScreen } options={
+              {headerRight: () => (
+              <TouchableOpacity onPress={() => navigate('EditItem')}>
+                <FontAwesome name="pencil" size={30} />
+              </TouchableOpacity>
+            ),
+            title: 'Details'
+            } }/>
         <Stack.Screen name= 'CreatePlace' component={ CreateMeetingPlacesScreen } />
-        <Stack.Screen name= 'PlaceDetail' component={ MeetingPlaceDetailScreen } />
+        <Stack.Screen name= 'PlaceDetail' component={ MeetingPlaceDetailScreen } options={
+          {headerRight: () => (
+          <TouchableOpacity onPress={() => navigate('EditPlace', {id: getPathFromState('id')} )}>
+            <FontAwesome name="pencil" size={30} />
+          </TouchableOpacity>
+        ),
+        title: 'Details'
+        } }/>
+        <Stack.Screen name = 'EditItem' component={ EditGrabItemScreen } />
+        <Stack.Screen name = 'EditPlace' component= { EditMeetPlaceScreen } />
       </Stack.Navigator>
    
   )

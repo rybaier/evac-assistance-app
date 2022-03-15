@@ -11,9 +11,7 @@ const EvacGrabItemScreen = ({ navigation }) => {
   // console.log(state)
   const [loading, setLoading] = useState(false)
   const [checked, setChecked] = useState(null)
-  
 
-  
     
   useEffect(() => {
       setLoading(true)
@@ -22,23 +20,20 @@ const EvacGrabItemScreen = ({ navigation }) => {
     }, [])
  
     return (
-      <View>
+      <View style={styles.list}>
+          <Text style={ styles.title }> One tap to check off, long tap to uncheck</Text>
           {loading === false && state.length > 0 ?
-          <FlatList  data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
+          <FlatList style={styles.list} data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
                         return(
-                            
                                 <Pressable style ={[styles.row, {backgroundColor: checked === item._id ? 'yellow' : null }]}
                                  onPress = {() => setChecked(item._id)} 
                                 onLongPress = {() => setChecked(null)}>
                                     <Text style= {styles.text}> { item.priority }</Text>
                                     <Text style= {styles.text}> { item.name }</Text>
-                                   
-                                    <TouchableOpacity onPress={ () => navigation.navigate('ItemDetail', { id: item._id}) }>
+                                    <TouchableOpacity onPress={ () => navigation.navigate('ItemDetail', { id: item._id, item: item}) }>
                                         <Ionicons name= 'information-circle-outline' style={ styles.icon } />
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={ ()=> deleteItems(item._id) }>
-                                        <FontAwesome name= 'trash-o' style={ styles.icon } />
-                                    </TouchableOpacity>
+                                 
                               </Pressable>
                     
                   )
@@ -61,9 +56,6 @@ const styles = StyleSheet.create({
     icon: {
         fontSize: 30
     },
-    unchecked:{
-       
-    },
     checked:{
         backgroundColor: 'yellow'
 
@@ -71,6 +63,14 @@ const styles = StyleSheet.create({
     text:{
       fontSize: 18,
       color: 'red'
+    },
+    title:{
+        alignSelf:'center',
+        fontSize: 18,
+        
+    },
+    list:{
+        backgroundColor: '#deb887'
     }
 })
 

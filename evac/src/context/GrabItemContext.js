@@ -13,7 +13,7 @@ const ItemReducer = (state, action) => {
             return action.payload
         case 'edit_items':
             return state.map((item) =>{
-                return item.id === action.payload.id ? action.payload : item
+                return item._id === action.payload.id ? action.payload : item
             })
         default:
             return state
@@ -36,12 +36,12 @@ const createItems = dispatch => async ( {priority, name, location, instructions}
 const deleteItems = dispatch => async (id) => {
  console.log('delete')
  await evacAPI.delete(`/items/${id}`)
- navigate('Home')
+ navigate('EvacGrabItem')
 }
 
 const editItems = dispatch => async ({ id, priority, name, location, instructions }) => {
-    console.log('edit')
-    await evacAPI.put(`/meetingplaces/${id}`, { priority, name, location, instructions } )
+    console.log('edit', id, priority, name, location, instructions)
+    await evacAPI.put(`/items/${id}`, { priority, name, location, instructions } )
     dispatch ({type: 'edit_items', payload: {id, priority, name, location, instructions } })
     navigate('EvacGrabItem')
 }

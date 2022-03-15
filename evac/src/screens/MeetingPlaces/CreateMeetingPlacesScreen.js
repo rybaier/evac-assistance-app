@@ -13,6 +13,7 @@ const CreateMeetingPlacesScreen = ({ navigation }) => {
       <MeetingPlaceForm
         formTitle={"Set a Meeting Place"}
         errorMessage={null}
+        initialValues={{name:'', compass_direction:'', address:''}}
         onSubmit={( name, compass_direction, address ) =>
           createPlaces( name, compass_direction, address )
         }

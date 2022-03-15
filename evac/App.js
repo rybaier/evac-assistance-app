@@ -89,23 +89,9 @@ function App(){
         {/* <Stack.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
         <Stack.Screen name='HowToGuide' component={ HowToGuideScreen } options={{ title: 'Walkthrough' }} />   
         <Stack.Screen name='CreateItem' component={ CreateGrabItemScreen } />
-        <Stack.Screen name='ItemDetail' component={ GrabItemDetailScreen } options={
-              {headerRight: () => (
-              <TouchableOpacity onPress={() => navigate('EditItem')}>
-                <FontAwesome name="pencil" size={30} />
-              </TouchableOpacity>
-            ),
-            title: 'Details'
-            } }/>
+        <Stack.Screen name='ItemDetail' component={ GrabItemDetailScreen } options={{ title: 'Details' }}/>
         <Stack.Screen name= 'CreatePlace' component={ CreateMeetingPlacesScreen } />
-        <Stack.Screen name= 'PlaceDetail' component={ MeetingPlaceDetailScreen } options={
-          {headerRight: () => (
-          <TouchableOpacity onPress={() => navigate('EditPlace', {id: getPathFromState('id')} )}>
-            <FontAwesome name="pencil" size={30} />
-          </TouchableOpacity>
-        ),
-        title: 'Details'
-        } }/>
+        <Stack.Screen name= 'PlaceDetail' component={ MeetingPlaceDetailScreen } options={{title: 'Place Details'}} />
         <Stack.Screen name = 'EditItem' component={ EditGrabItemScreen } />
         <Stack.Screen name = 'EditPlace' component= { EditMeetPlaceScreen } />
       </Stack.Navigator>

@@ -3,10 +3,10 @@ import { Text, Button, Input } from "react-native-elements";
 import { View, StyleSheet } from "react-native";
 import BasicStyledSpace from "./BasicStyleSpace";
 
-const MeetingPlaceForm = ({ formTitle, errorMessage, onSubmit, buttonText }) => {
-const [name, setName] =useState('')
-const [compass_direction, setCompass_Direction] = useState('')
-const [address, setAddress] = useState('')
+const MeetingPlaceForm = ({ formTitle, errorMessage, onSubmit, buttonText, initialValues }) => {
+const [name, setName] =useState(initialValues.name)
+const [compass_direction, setCompass_Direction] = useState(initialValues.compass_direction)
+const [address, setAddress] = useState(initialValues.address)
 
   return (
     <View>

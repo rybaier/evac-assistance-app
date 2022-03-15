@@ -11,6 +11,7 @@ const CreateGrabItemScreen = () => {
       <ItemForm
         formTitle={"Add Item to Grab List"}
         errorMessage={null}
+        initialValues= {{priority: '', name: '', location: '', instructions:''}}
         onSubmit={( priority, name, location, instructions ) =>
           createItems( priority, name, location, instructions )
         }

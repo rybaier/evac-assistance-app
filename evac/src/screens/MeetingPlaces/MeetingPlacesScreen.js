@@ -23,12 +23,10 @@ const MeetingPlacesScreen = ({ navigation }) => {
                           <View style={ styles.row }>
                               <Text style= {styles.text}> { item.priority }</Text>
                               <Text style= {styles.text}> { item.name }</Text>
-                              <TouchableOpacity onPress={ () => navigation.navigate('PlaceDetail', { id: item._id}) }>
+                              <TouchableOpacity onPress={ () => navigation.navigate('PlaceDetail', { id: item._id, place: item}) }>
                                   <Ionicons name= 'information-circle-outline' style={ styles.icon } />
                               </TouchableOpacity>
-                              <TouchableOpacity onPress={ ()=> deletePlaces(item._id) }>
-                                  <FontAwesome name= 'trash-o' style={ styles.icon } />
-                              </TouchableOpacity>
+                          
                           </View>
                     
                   )
@@ -48,7 +46,7 @@ const styles = StyleSheet.create({
         
     },
     icon: {
-        fontSize: 16
+        fontSize: 30
     },
     checked:{
         textDecorationLine: 'line-through', 

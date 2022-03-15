@@ -3,11 +3,11 @@ import { Text, Button, Input } from "react-native-elements";
 import { View, StyleSheet } from "react-native";
 import BasicStyledSpace from "./BasicStyleSpace";
 
-const ItemForm = ({ formTitle, errorMessage, onSubmit, buttonText }) => {
-const [priority, setPriority] = useState('')
-const [name, setName] =useState('')
-const [location, setLocation] = useState('')
-const [instructions, setInstructions] = useState('')
+const ItemForm = ({ formTitle, errorMessage, onSubmit, buttonText, initialValues }) => {
+const [priority, setPriority] = useState(initialValues.priority)
+const [name, setName] =useState(initialValues.name)
+const [location, setLocation] = useState(initialValues.location)
+const [instructions, setInstructions] = useState(initialValues.instructions)
 
   return (
     <View>

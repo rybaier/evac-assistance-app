@@ -1,10 +1,12 @@
 import React from 'react'
 import {Text, View, StyleSheet, Button } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import BasicStyledSpace from '../components/BasicStyleSpace'
 const AboutScreen = ({ navigation }) => {
     return (
-        <SafeAreaView>
+        
+        <ScrollView>
              <Button onPress={() => navigation.navigate('Signin')} title= 'Sign In Flow Delete' />
 
             <Button onPress={() => navigation.navigate('LoggedIn')} title= 'Logged In Flow Delete' />
@@ -28,7 +30,7 @@ const AboutScreen = ({ navigation }) => {
                     what to grab you can open this app and go down your checklist. Grabbing what you can by priority order
                     based on the amount of time you have. 
                 </Text>
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 

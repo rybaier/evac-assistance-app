@@ -12,7 +12,7 @@ const BasicStyledSpace = ({ children }) => {
 
 const styles = StyleSheet.create({
     space: {
-        margin: 20
+        margin: 15
     }
 })
 

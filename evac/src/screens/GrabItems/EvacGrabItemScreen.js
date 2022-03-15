@@ -20,10 +20,10 @@ const EvacGrabItemScreen = ({ navigation }) => {
     }, [])
  
     return (
-      <View style={styles.list}>
+      <View style={styles.bg}>
           <Text style={ styles.title }> One tap to check off, long tap to uncheck</Text>
           {loading === false && state.length > 0 ?
-          <FlatList style={styles.list} data = { state } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
+          <FlatList style={styles.list} data = { state.sort((a,b) => a.priority.localeCompare(b.priority) ) } keyExtractor = { (item) => item._id}  renderItem ={ ({item}) => {
                         return(
                                 <Pressable style ={[styles.row, {backgroundColor: checked === item._id ? 'yellow' : null }]}
                                  onPress = {() => setChecked(item._id)} 
@@ -71,7 +71,12 @@ const styles = StyleSheet.create({
     },
     list:{
         backgroundColor: '#deb887'
+    },
+    bg:{
+        backgroundColor: '#deb887'
     }
+
+
 })
 
 export default EvacGrabItemScreen

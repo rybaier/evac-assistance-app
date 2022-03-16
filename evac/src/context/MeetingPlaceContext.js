@@ -14,6 +14,7 @@ const MeetingPlaceReducer = (state, action) => {
             return state.map((place) => {
                 return place.id === action.payload.id ? action.payload : place
             })
+    
         default:
             return state
     }

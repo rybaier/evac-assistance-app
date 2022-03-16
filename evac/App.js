@@ -223,12 +223,10 @@ const LoggedIn = () => {
   );
 };
 
-{
-  /* <Stack.Screen name='Home' component={ MainScreen } />
-<Stack.Screen name='EvacGrabItem' component={ EvacGrabItemScreen } />
-<Stack.Screen name='LocationShare' component={ LocationShareScreen } />
-<Stack.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } /> */
-}
+//  <Stack.Screen name='Home' component={ MainScreen } />
+// <Stack.Screen name='EvacGrabItem' component={ EvacGrabItemScreen } />
+// <Stack.Screen name='LocationShare' component={ LocationShareScreen } />
+// <Stack.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
 {
   /* <Stack.Screen name='Messages' component={MessageScreen} /> */
 }
@@ -269,6 +267,11 @@ function App() {
         component={ResetPasswordScreen}
         options={{ headerShown: false }}
       />
+
+      <Stack.Screen name='Home' component={ MainScreen } />
+      <Stack.Screen name='EvacGrabItem' component={ EvacGrabItemScreen } />
+      <Stack.Screen name='LocationShare' component={ LocationShareScreen } />
+      <Stack.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
     </Stack.Navigator>
   );
 }

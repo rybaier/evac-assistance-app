@@ -73,3 +73,8 @@
 
     Remember You will not be able to take everything. Prioritze what matters most, and take only those. 
 
+## notes for continuing priject to deployment.
+- user can create group and invite others into it
+
+- Function using Mapviews to track members of user group
+- build messaging app separately then add it into code block for users

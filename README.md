@@ -98,7 +98,7 @@ project must:
 - Be a complete product.
 - Implement thoughtful user stories
 - Be deployed online
-    - app store for me 
+    - (waived due to Language choice of react native)
 - Use something we didn't teach in class
     - React Native
 

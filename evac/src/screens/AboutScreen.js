@@ -37,7 +37,7 @@ const AboutScreen = ({ navigation }) => {
                     based on the amount of time you have. 
                 </Text>
                 <View style={ styles.row }>
-                <TouchableOpacity style={ styles.column } onPress={() => navigation.navigate('Sigin') }>
+                <TouchableOpacity style={ styles.column } onPress={() => navigation.navigate('Signin') }>
                 <MaterialIcons name="account-circle" size={50} color="black" />                     
                 <Text style={ styles.text }>Login</Text>
                 </TouchableOpacity>

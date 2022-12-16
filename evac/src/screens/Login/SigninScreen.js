@@ -4,15 +4,14 @@ import LoginForm from '../../components/LogInForm'
 import { Context as AuthorizationContext } from '../../context/AuthContext'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-//form variables
-//formTitle, errorMessage, onSubmit, buttonText 
+
 const SigninScreen = ({ navigation }) => {
     const { state, signin, resetPassword } = useContext(AuthorizationContext)
     const { errorMessage } = state
     return (
         <SafeAreaView>
          <LoginForm 
-         formTitle={'Welcome to Evac-act Sign In to continue'}
+         formTitle={'Welcome to PrEvac Sign In to continue'}
          errorMessage={ errorMessage } 
          onSubmit={({ email, password })=> signin({ email, password }) } 
          buttonText= {'Sign In' }

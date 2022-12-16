@@ -5,7 +5,7 @@ import BasicStyledSpace from "../components/BasicStyleSpace";
 const HowToGuideScreen = () => {
   return (
     <ScrollView style={ styles.container }>
-      <Text style={{ fontSize: 48, alignSelf: 'center', color: '#ffffff'}}> Evac Prep Walkthrough </Text>
+      <Text style={{ fontSize: 48, alignSelf: 'center', }}> Evac Prep Walkthrough </Text>
       <BasicStyledSpace />
       <Text style={ styles.text}>
         This app is here to help you in the unfortunate
@@ -78,11 +78,14 @@ const HowToGuideScreen = () => {
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: '#808080'
+        
     },
     text:{
-        fontSize: 18,
-        color: '#ffffff'
+        fontSize: 20,
+        margin: 10,
+        marginLeft: 15,
+        marginRight: 15,
+        
     }
 });
 

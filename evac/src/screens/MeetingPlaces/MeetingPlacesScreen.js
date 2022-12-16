@@ -6,7 +6,6 @@ import { Context as MeetingPlaceContext } from "../../context/MeetingPlaceContex
 import { Ionicons, FontAwesome } from '@expo/vector-icons'
 const MeetingPlacesScreen = ({ navigation }) => {
   const { state, deletePlaces, getPlaces } = useContext(MeetingPlaceContext)
-  // console.log(state)
   const [loading, setLoading] = useState(false)
   
   useEffect(() => {
@@ -14,7 +13,7 @@ const MeetingPlacesScreen = ({ navigation }) => {
       getPlaces()
       setLoading(false)
     }, [])
- 
+
     return (
       <View>
           {loading === false && state.length > 0 ?

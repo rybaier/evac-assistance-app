@@ -3,8 +3,7 @@ import {Text, View, StyleSheet, Button } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import LoginForm from '../../components/LogInForm'
 import { Context as AuthorizationContext } from '../../context/AuthContext'
-//form variables
-//formTitle, errorMessage, onSubmit, buttonText 
+
 const ResetPasswordScreen = ({ navigation }) => {
     const { state, resetPassword } = useContext(AuthorizationContext)
     return (

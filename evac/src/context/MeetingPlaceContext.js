@@ -2,7 +2,7 @@ import React from 'react'
 import createDataContext from './createDataContext'
 import evacAPI from '../api/evacAPI'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as RootNavigation from '../../RootNavigation'
+import * as RootNavigation from '../RootNavigation'
 
 const navigate = RootNavigation.navigate
 
@@ -14,7 +14,6 @@ const MeetingPlaceReducer = (state, action) => {
             return state.map((place) => {
                 return place.id === action.payload.id ? action.payload : place
             })
-    
         default:
             return state
     }
@@ -35,7 +34,7 @@ const createPlaces = dispatch => async ({ name, compass_direction, address}) => 
 const deletePlaces = dispatch => async (id) => {
  console.log('delete')
  await evacAPI.delete(`/meetingplaces/${id}`)
- navigate('Home')
+ navigate('MeetingPlaces')
 }
 
 const editPlaces = dispatch => async ({id, name, compass_direction, address}) => {

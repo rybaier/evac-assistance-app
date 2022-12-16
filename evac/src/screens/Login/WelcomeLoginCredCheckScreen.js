@@ -10,15 +10,8 @@ const WelcomeLoginCredCheckScreen = ({ navigation }) => {
     useEffect(()=>{
         stillLoggedIn()
     }, [])
-    //use interval function to create a blinking cred check message 
     return (
-        <SafeAreaView>
-            <Text style={{fontSize: 48}}> Welcome Checking Credentials </Text>
-            <Button onPress={() => navigation.navigate('Signin')} title= 'Sign In' />
-            <Button onPress={() => navigation.navigate('Signup')} title= 'Sign Up' />
-            <Button onPress={() => navigation.navigate('LoggedIn')} title= 'Logged In Flow Delete' />
-
-        </SafeAreaView>
+        null
     )
 }
 

@@ -5,7 +5,6 @@ import MeetingPlaceForm from '../../components/MeetingPlaceForm'
 import { Context as MeetingPlaceContext } from '../../context/MeetingPlaceContext'
 
 const EditMeetPlaceScreen = ({ navigation, route }) => {
-    // console.log(navigation)
     const { state, editPlaces } = useContext(MeetingPlaceContext)
     const place = route.params.place
     const id = place._id

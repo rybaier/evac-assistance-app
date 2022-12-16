@@ -1,4 +1,23 @@
 # Evact Project  Pseudo Code, plan and checklist title Evac-act
+
+## Updated Pseudocode plan
+- change from useContext to redux for more advanced state management
+    - specifically use store for persisting data after app close 
+    - this should fix the list update bugs 
+- add react-native-maps to meeting places
+    - meeting place list options 
+        - turn meeting places into cards 
+        - use meeting places to plot directly on a map (google)
+        - add get directions button (google maps force or directions plot with polyline?)
+    - 
+- add animation to item list 
+- change welcome screen to swipe cards through to login screen
+- use facebook login modal
+    - instagram login modal?
+    - google login modal ? 
+    - have option from homepage to mark as safe?
+
+
 ## Backend Checklist
 - Build Backend With Express
     -  Build Backend with Django (later on for more django experience)

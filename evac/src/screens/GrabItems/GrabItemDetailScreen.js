@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import ItemForm from "../../components/ItemForm";
 import { Context as ItemContext } from "../../context/GrabItemContext";
 import BasicStyledSpace from "../../components/BasicStyleSpace";
 import { FontAwesome, EvilIcons } from '@expo/vector-icons'
@@ -10,7 +9,6 @@ const GrabItemDetailScreen = ({ navigation, route }) => {
   const { state, deleteItems, getItems } = useContext(ItemContext);
   const id = route.params.id;
   const item = route.params.item;
-  // console.log(item);
   return (
     <ScrollView style={styles.container}>
       <BasicStyledSpace />
@@ -21,7 +19,7 @@ const GrabItemDetailScreen = ({ navigation, route }) => {
       <Text style={styles.location}> Where to Find:</Text>
       <Text style={styles.location}>{item.location}</Text>
       <BasicStyledSpace />
-      <Text style={styles.instruction}> How to get to it: </Text>
+      <Text style={styles.instruction}> Instructions: </Text>
       <Text style={styles.instruction}> {item.instructions}</Text>
       <BasicStyledSpace />
       <View style={styles.row}>

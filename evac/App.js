@@ -10,7 +10,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Provider as AuthorizationProvider } from "./src/context/AuthContext";
 import { Provider as GrabItemProvider } from "./src/context/GrabItemContext";
 import { Provider as MeetingPlaceProvider } from "./src/context/MeetingPlaceContext";
-import { navigationRef, navigate } from "./RootNavigation";
+import { navigationRef, navigate } from "./src/RootNavigation";
 import { Feather, FontAwesome } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -20,11 +20,8 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import AboutScreen from "./src/screens/AboutScreen";
 import EvacGrabItemScreen from "./src/screens/GrabItems/EvacGrabItemScreen";
 import HowToGuideScreen from "./src/screens/HowToGuideScreen";
-import LocationShareScreen from "./src/screens/LocationShareScreen";
 import MainScreen from "./src/screens/MainScreen";
 import MeetingPlacesScreen from "./src/screens/MeetingPlaces/MeetingPlacesScreen";
-import MessageScreen from "./src/screens/MessageScreen";
-import ScannerRadioScreen from "./src/screens/ScannerRadioScreen";
 import SigninScreen from "./src/screens/Login/SigninScreen";
 import SignupScreen from "./src/screens/Login/SignupScreen";
 import ResetPasswordScreen from "./src/screens/Login/ResetPasswordScreen";
@@ -35,9 +32,6 @@ import CreateMeetingPlacesScreen from "./src/screens/MeetingPlaces/CreateMeeting
 import MeetingPlaceDetailScreen from "./src/screens/MeetingPlaces/MeetingPlaceDetailScreen";
 import EditGrabItemScreen from "./src/screens/GrabItems/EditGrabItemScreen";
 import EditMeetPlaceScreen from "./src/screens/MeetingPlaces/EditMeetPlaceScreen";
-// need to have to navigation flows
-// login flow, has access to signup signin and aboutApp
-// main flow has access to everything else
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -79,7 +73,6 @@ const LoggedIn = () => {
           },
         }}
       />
-      {/* <Drawer.Screen name='LocationShare' component={ LocationShareScreen } /> */}
       <Drawer.Screen
         name="MeetingPlaces"
         component={MeetingPlacesScreen}
@@ -99,8 +92,6 @@ const LoggedIn = () => {
           },
         }}
       />
-      {/* <Drawer.Screen name='Messages' component={MessageScreen} /> */}
-      {/* <Drawer.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */}
       <Drawer.Screen
         name="About"
         component={AboutScreen}
@@ -223,16 +214,7 @@ const LoggedIn = () => {
   );
 };
 
-//  <Stack.Screen name='Home' component={ MainScreen } />
-// <Stack.Screen name='EvacGrabItem' component={ EvacGrabItemScreen } />
-// <Stack.Screen name='LocationShare' component={ LocationShareScreen } />
-// <Stack.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
-{
-  /* <Stack.Screen name='Messages' component={MessageScreen} /> */
-}
-{
-  /* <Stack.Screen name='ScannerRadio' component={ScannerRadioScreen} /> */
-}
+
 
 function App() {
   return (
@@ -267,11 +249,6 @@ function App() {
         component={ResetPasswordScreen}
         options={{ headerShown: false }}
       />
-
-      <Stack.Screen name='Home' component={ MainScreen } />
-      <Stack.Screen name='EvacGrabItem' component={ EvacGrabItemScreen } />
-      <Stack.Screen name='LocationShare' component={ LocationShareScreen } />
-      <Stack.Screen name='MeetingPlaces' component={ MeetingPlacesScreen } />
     </Stack.Navigator>
   );
 }

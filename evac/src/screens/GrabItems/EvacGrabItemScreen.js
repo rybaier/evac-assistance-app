@@ -7,8 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 
 const EvacGrabItemScreen = ({ navigation }) => {
-    const { state, deleteItems, getItems } = useContext(ItemContext)
-  // console.log(state)
+    const { state, getItems } = useContext(ItemContext)
   const [loading, setLoading] = useState(false)
   const [checked, setChecked] = useState(null)
 

@@ -7,8 +7,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-{/* <FontAwesome name="registered" size={24} color="black" /> */}
-{/* <Entypo name="login" size={24} color="black" /> */}
+
 
 
 const AboutScreen = ({ navigation }) => {
@@ -16,7 +15,8 @@ const AboutScreen = ({ navigation }) => {
         
         <ScrollView >
             <BasicStyledSpace />
-            <Text style={ styles.about }>Welcome to Evac-act this app is designed to help ease some of the 
+            <BasicStyledSpace />
+            <Text style={ styles.about }>Welcome to PrEvac this app is designed to help ease some of the 
                 stress that is involved when the call to evacuate your home is made. </Text>
                 <Text style={ styles.about }>There are 2 main parts to this app</Text>
                 <BasicStyledSpace />
@@ -47,12 +47,15 @@ const AboutScreen = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
         </ScrollView>
+        
     )
 }
 
 const styles = StyleSheet.create({
     about:{
         fontSize: 18,
+        marginLeft: 10,
+        marginRight: 10
     },
     bg:{ 
         backgroundColor: '#808080'

@@ -2,7 +2,7 @@ import React from 'react'
 import createDataContext from './createDataContext'
 import evacAPI from '../api/evacAPI'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as RootNavigation from '../../RootNavigation'
+import * as RootNavigation from '../RootNavigation'
 
 const navigate = RootNavigation.navigate
 

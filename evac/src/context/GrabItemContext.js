@@ -3,7 +3,7 @@ import React from 'react'
 import createDataContext from './createDataContext'
 import evacAPI from '../api/evacAPI'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as RootNavigation from '../../RootNavigation'
+import * as RootNavigation from '../RootNavigation'
 
 const navigate = RootNavigation.navigate
 
@@ -21,10 +21,8 @@ const ItemReducer = (state, action) => {
 }    
 
 const getItems = dispatch => async () => {
-    console.log('get')
     const response = await evacAPI.get('/items')
     dispatch({type: 'get_items', payload: response.data })
-    // console.log(response.data)
 }
 
 const createItems = dispatch => async ( {priority, name, location, instructions} ) => {

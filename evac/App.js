@@ -32,6 +32,7 @@ import CreateMeetingPlacesScreen from "./src/screens/MeetingPlaces/CreateMeeting
 import MeetingPlaceDetailScreen from "./src/screens/MeetingPlaces/MeetingPlaceDetailScreen";
 import EditGrabItemScreen from "./src/screens/GrabItems/EditGrabItemScreen";
 import EditMeetPlaceScreen from "./src/screens/MeetingPlaces/EditMeetPlaceScreen";
+import WelcomeToPrEvac from "./src/screens/Login/WelcomeToPrEvac";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -225,9 +226,9 @@ function App() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="About"
-        component={AboutScreen}
-        options={{ headerShown: false }}
+        name="Welcome"
+        component={WelcomeToPrEvac}
+        options={{ headerShown: false}}
       />
       <Stack.Screen
         name="Signup"

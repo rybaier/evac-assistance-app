@@ -228,17 +228,34 @@ function App() {
       <Stack.Screen
         name="Welcome"
         component={WelcomeToPrEvac}
-        options={{ headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Signup"
         component={SignupScreen}
-        options={{ headerShown: false }}
+        options={{ 
+          title: 'Sign Up', 
+          headerStyle: {
+          backgroundColor: "#f4511e",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        }}}
       />
       <Stack.Screen
         name="Signin"
         component={SigninScreen}
-        options={{ headerShown: false }}
+        options={{ 
+          title: 'Sign In', 
+          headerStyle: {
+          backgroundColor: "#f4511e",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        }
+        }}
       />
       <Stack.Screen
         name="LoggedIn"

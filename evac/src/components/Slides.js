@@ -5,14 +5,15 @@ import { Button } from '@rneui/themed';
 import BasicStyledSpace from "./BasicStyleSpace";
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import { Entypo } from '@expo/vector-icons'
 
 
 const SCREEN_WIDTH = Dimensions.get('window').width
 const SCREEN_HEIGHT = Dimensions.get('window').height
 
 const Slides = ({ data, navigation }) => {
-
+    // is there a need for rendering login buttons on last slide if you can slide 
+    // up to login at any point?
         const renderLastSlide = (index) => {
             if (index === data.length -1){
                 return(
@@ -34,7 +35,7 @@ const Slides = ({ data, navigation }) => {
         }
 
     return(
-        <ScrollView horizontal style={{flex:1}} pagingEnabled>
+        <ScrollView horizontal style={{flex:0}} pagingEnabled>
              {data.map((slide, index)=>{
             return(
          
@@ -44,6 +45,7 @@ const Slides = ({ data, navigation }) => {
                     <Text style= {styles.textStyle}>{slide.text1}</Text>
                     <Text style= {styles.textStyle}>{slide.text2}</Text>
                     <Text style= {styles.textStyle}>{slide.text3}</Text>
+                    {slide.arrow}
                     {renderLastSlide(index)}
                 </View>
             )

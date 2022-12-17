@@ -36,7 +36,7 @@ const AboutScreen = ({ navigation }) => {
                     what to grab you can open this app and go down your checklist. Grabbing what you can by priority order
                     based on the amount of time you have. 
                 </Text>
-                <View style={ styles.row }>
+                {/* <View style={ styles.row }>
                 <TouchableOpacity style={ styles.column } onPress={() => navigation.navigate('Signin') }>
                 <MaterialIcons name="account-circle" size={50} color="black" />                     
                 <Text style={ styles.text }>Login</Text>
@@ -45,7 +45,7 @@ const AboutScreen = ({ navigation }) => {
                 <MaterialCommunityIcons name="account-plus" size={50} color="black" /> 
                 <Text style={ styles.text }>Sign Up</Text>
                 </TouchableOpacity>
-            </View>
+            </View> */}
         </ScrollView>
         
     )

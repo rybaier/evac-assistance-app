@@ -11,11 +11,12 @@
         - add get directions button (google maps force or directions plot with polyline?)
     - 
 - add animation to item list 
-- change welcome screen to swipe cards through to login screen
+- change welcome screen to swipe cards through to login screen - ~CHECK~
 - use facebook login modal
     - instagram login modal?
     - google login modal ? 
     - have option from homepage to mark as safe?
+- Turn Walkthrough into slides with buttons to create items and create meeting places
 
 
 ## Backend Checklist

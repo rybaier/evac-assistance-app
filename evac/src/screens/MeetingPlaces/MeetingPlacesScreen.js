@@ -12,7 +12,7 @@ const MeetingPlacesScreen = ({ navigation }) => {
       setLoading(true)
       getPlaces()
       setLoading(false)
-    }, [])
+    }, [navigation])
 
     return (
       <View>

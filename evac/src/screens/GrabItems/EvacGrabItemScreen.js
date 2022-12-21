@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {Text, View, StyleSheet, FlatList, TouchableOpacity, Pressable } from 'react-native'
+import {Text, View, StyleSheet, FlatList, TouchableOpacity, Pressable, Alert } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Context as ItemContext } from '../../context/GrabItemContext'
 import { FontAwesome } from '@expo/vector-icons'
@@ -11,12 +11,16 @@ const EvacGrabItemScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false)
   const [checked, setChecked] = useState(null)
 
+//   const focusHandler = navigation.addListener('focus', () => {
+//     Alert.alert('Refreshed')
+//   })
     
   useEffect(() => {
+    //   focusHandler()
       setLoading(true)
       getItems()
       setLoading(false)
-    }, [])
+    }, [navigation])
  
     return (
       <View style={styles.bg}>

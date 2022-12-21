@@ -13,29 +13,30 @@ const SCREEN_HEIGHT = Dimensions.get('window').height
 
 const Slides = ({ data, navigation }) => {
     // is there a need for rendering login buttons on last slide if you can slide 
-    // up to login at any point?
-        const renderLastSlide = (index) => {
-            if (index === data.length -1){
-                return(
-                <View>
-                    <BasicStyledSpace />
-                    <View style={ styles.row }>
-                        <TouchableOpacity style={ styles.column } onPress={() => navigation.navigate('Signin') }>
-                            <MaterialIcons name="account-circle" size={50} color="black" />                     
-                            <Text style={ styles.text }>Login</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={ styles.column }onPress={() => navigation.navigate('Signup') }>
-                            <MaterialCommunityIcons name="account-plus" size={50} color="black" /> 
-                            <Text style={ styles.text }>Sign Up</Text>
-                        </TouchableOpacity>
-                </View>
-                </View>
-                )
-            }
-        }
+    // up to login at any point? YES
+    // renderLastSlide not needed 
+        // const renderLastSlide = (index) => {
+        //     if (index === data.length -1){
+        //         return(
+        //         <View>
+        //             <BasicStyledSpace />
+        //             <View style={ styles.row }>
+        //                 <TouchableOpacity style={ styles.column } onPress={() => navigation.navigate('Signin') }>
+        //                     <MaterialIcons name="account-circle" size={50} color="black" />                     
+        //                     <Text style={ styles.text }>Login</Text>
+        //                 </TouchableOpacity>
+        //                 <TouchableOpacity style={ styles.column }onPress={() => navigation.navigate('Signup') }>
+        //                     <MaterialCommunityIcons name="account-plus" size={50} color="black" /> 
+        //                     <Text style={ styles.text }>Sign Up</Text>
+        //                 </TouchableOpacity>
+        //         </View>
+        //         </View>
+        //         )
+        //     }
+        // }
 
     return(
-        <ScrollView horizontal style={{flex:0}} pagingEnabled>
+        <ScrollView horizontal style={{flex:1}} pagingEnabled>
              {data.map((slide, index)=>{
             return(
          
@@ -45,8 +46,7 @@ const Slides = ({ data, navigation }) => {
                     <Text style= {styles.textStyle}>{slide.text1}</Text>
                     <Text style= {styles.textStyle}>{slide.text2}</Text>
                     <Text style= {styles.textStyle}>{slide.text3}</Text>
-                    {slide.arrow}
-                    {renderLastSlide(index)}
+                    {slide.icon}
                 </View>
             )
         })}

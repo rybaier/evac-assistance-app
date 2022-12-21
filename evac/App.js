@@ -11,7 +11,7 @@ import { Provider as AuthorizationProvider } from "./src/context/AuthContext";
 import { Provider as GrabItemProvider } from "./src/context/GrabItemContext";
 import { Provider as MeetingPlaceProvider } from "./src/context/MeetingPlaceContext";
 import { navigationRef, navigate } from "./src/RootNavigation";
-import { Feather, FontAwesome } from "@expo/vector-icons";
+import { Feather, FontAwesome, AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 //==============
@@ -126,6 +126,11 @@ const LoggedIn = () => {
         component={CreateGrabItemScreen}
         options={{
           title: "Create Item",
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigate("EvacGrabItem")}>
+              <AntDesign name="back" size={30} />
+            </TouchableOpacity>
+          ),
           drawerLabel: () => null,
           headerStyle: {
             backgroundColor: "#f4511e",
@@ -142,6 +147,11 @@ const LoggedIn = () => {
         options={{
           title: "Item Details",
           drawerLabel: () => null,
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigate("EvacGrabItem")}>
+              <AntDesign name="back" size={30} />
+            </TouchableOpacity>
+          ),
           headerStyle: {
             backgroundColor: "#f4511e",
           },
@@ -156,6 +166,11 @@ const LoggedIn = () => {
         component={CreateMeetingPlacesScreen}
         options={{
           title: "Create Meeting Place",
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigate("MeetingPlaces")}>
+              <AntDesign name="back" size={30} />
+            </TouchableOpacity>
+          ),
           drawerLabel: () => null,
           headerStyle: {
             backgroundColor: "#f4511e",

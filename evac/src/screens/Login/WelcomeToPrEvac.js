@@ -18,19 +18,19 @@ const WelcomeToPrEvac = ({ navigation }) => {
         text1:'',
         text2:'An App designed to help ease some of the stress that is involved when the call to Evacuate your home is made',
         text3:'There are 2 main parts to this app',
-        arrow: <Entypo name="arrow-long-left" size={24} color="black" />,
+        icon: <Entypo name="arrow-long-left" size={24} color="black" />,
          color:'#808080'
          },
         {text: '1. Create a list of Items that you would want to grab if evacuation was called.',
         text1:'You will give each item a priority number 1 - 5 with 1 being ABSOLUTE MUST GRAB.', 
         text2: 'Along with priority you will give a name, location in your house, and any instructions that go along with that item.', 
-        arrow: <Entypo name="arrow-long-left" size={24} color="black" />,
+        icon: <Entypo name="arrow-long-left" size={24} color="black" />,
         color:'#03A9F4'},
         {
         text: '2. Create a List of Meeting places.', 
         text1: 'Places where you can gather with friends or other family when evacuation is called. It is HIGHLY recommended that you choose at least one for each compass direction.',
         text2: 'North, South, East and West. ', 
-        arrow: <Entypo name="arrow-long-left" size={24} color="black" />, 
+        icon: <Entypo name="arrow-long-left" size={24} color="black" />, 
         color:'#009688'
         },
         {
@@ -38,7 +38,7 @@ const WelcomeToPrEvac = ({ navigation }) => {
         text1: 'Before the stress of Evacuation happens. This stress is natural, so rather than trying to decide', 
         text2: 'what to grab when evacuating. You can open this app and go down your checklist. ',
         text3: 'Grabbing what you can by priority order based on the amount of time you have. ',
-        arrow: <Entypo name="arrow-long-up" size={24} color="black" />,
+        icon: <Entypo name="arrow-long-up" size={24} color="black" />,
         color:'#03A9F4'
         },
     ]

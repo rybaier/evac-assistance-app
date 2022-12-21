@@ -29,7 +29,7 @@ const MainScreen = ( { navigation }) => {
             <BasicStyledSpace />
             <BasicStyledSpace />
             <View style={ styles.row }>
-                <TouchableOpacity style={ styles.column } onPress={() => navigation.navigate('About') }>
+                <TouchableOpacity style={ styles.column } onPress={() => navigation.navigate('Welcome') }>
                     <Ionicons name="md-information-circle" size={120} color="black" />
                     <Text style={ styles.text }>About</Text>
                 </TouchableOpacity>
